@@ -8,6 +8,10 @@ import useThrottle from './use-throttle.ts';
 
 # use-throttle
 
+```js
+const throttledFn = useThrottle(func, [wait=0], [options={}]);
+```
+
 <Playground>
   {() => {
     const debouncedChange = useThrottle((v) => {

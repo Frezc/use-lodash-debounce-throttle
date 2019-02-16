@@ -6,7 +6,10 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "start": "docz dev",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "build-doc": "docz build",
+    "pub-doc": "npm run build-doc && gh-pages -d .docz/dist"
   },
   "repository": {
     "type": "git",
@@ -31,6 +34,7 @@
     "@types/react": "^16.8.3",
     "docz": "^0.13.7",
     "docz-theme-default": "^0.13.7",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.2",
     "typescript": "^3.3.3"
   },

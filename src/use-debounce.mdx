@@ -1,5 +1,6 @@
 ---
 name: use-debounce
+route: /
 ---
 
 import { Playground } from 'docz';
@@ -8,19 +9,27 @@ import useDebounce from './use-debounce.ts';
 
 # use-debounce
 
+```js
+const debouncedFn = useDebounce(func, [wait=0], [options={}])
+```
+
 <Playground>
   {() => {
-    const debouncedChange = useDebounce((v) => {
-      console.log('debounced value', v);
-    }, 500, { maxWait: 2000 });
+    const [wait, setWait] = useState(500);
+    const debouncedChange = useDebounce((value) => {
+      console.log('debounced value', value);
+    }, wait, { maxWait: 2000 });
 
     return (
-      <input
-        type="text"
-        onChange={(e) => {
-          debouncedChange(e.target.value)
-        }}
-      />
+      <div>
+        <input
+          type="text"
+          onChange={(e) => {
+            debouncedChange(e.target.value);
+          }}
+        />
+        <button onClick={() => setWait(wait + 500)}>add wait</button>
+      </div>
     )
   }}
 </Playground>
