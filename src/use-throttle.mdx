@@ -1,0 +1,26 @@
+---
+name: use-throttle
+---
+
+import { Playground } from 'docz';
+import { useState, useEffect } from 'react';
+import useThrottle from './use-throttle.ts';
+
+# use-throttle
+
+<Playground>
+  {() => {
+    const debouncedChange = useThrottle((v) => {
+      console.log('throttled value', v);
+    }, 500, { leading: false });
+
+    return (
+      <input
+        type="text"
+        onChange={(e) => {
+          debouncedChange(e.target.value)
+        }}
+      />
+    )
+  }}
+</Playground>

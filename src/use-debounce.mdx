@@ -1,0 +1,26 @@
+---
+name: use-debounce
+---
+
+import { Playground } from 'docz';
+import { useState, useEffect } from 'react';
+import useDebounce from './use-debounce.ts';
+
+# use-debounce
+
+<Playground>
+  {() => {
+    const debouncedChange = useDebounce((v) => {
+      console.log('debounced value', v);
+    }, 500, { maxWait: 2000 });
+
+    return (
+      <input
+        type="text"
+        onChange={(e) => {
+          debouncedChange(e.target.value)
+        }}
+      />
+    )
+  }}
+</Playground>

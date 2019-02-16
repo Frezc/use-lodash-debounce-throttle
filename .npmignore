@@ -1,0 +1,7 @@
+node_modules/
+.vscode/
+.docz/
+.gitignore
+doczrc.js
+yarn.lock
+tsconfig.json

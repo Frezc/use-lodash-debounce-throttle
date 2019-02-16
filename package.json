@@ -1,0 +1,40 @@
+{
+  "name": "use-lodash-debounce-throttle",
+  "version": "0.1.0",
+  "description": "Bring debounce & throttle of lodash version to react-hooks",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "start": "docz dev",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Frezc/use-lodash-debounce-throttle.git"
+  },
+  "keywords": [
+    "react",
+    "react-hooks",
+    "lodash",
+    "debounce",
+    "throttle",
+    "hook"
+  ],
+  "author": "Frezc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Frezc/use-lodash-debounce-throttle/issues"
+  },
+  "homepage": "https://github.com/Frezc/use-lodash-debounce-throttle#readme",
+  "devDependencies": {
+    "@types/lodash": "^4.14.121",
+    "@types/react": "^16.8.3",
+    "docz": "^0.13.7",
+    "docz-theme-default": "^0.13.7",
+    "react": "^16.8.2",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
