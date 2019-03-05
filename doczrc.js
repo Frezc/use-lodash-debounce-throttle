@@ -4,4 +4,5 @@ export default {
   codeSandbox: false,
   files: '**/*.{md,markdown,mdx}',
   typescript: true,
+  hashRouter: true
 }
