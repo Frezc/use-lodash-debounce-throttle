@@ -1,7 +1,10 @@
 import { useEffect, useRef, useMemo } from 'react';
-import { Cancelable } from 'lodash';
 
-type Fn = (...args: any[]) => any;
+export type Fn = (...args: any[]) => any;
+export interface Cancelable {
+  cancel(): void;
+  flush(): void;
+}
 
 function createCancelableHook<T extends Fn, O>(createFn: (fnWrapper: Fn, wait?: number, options?: O) => T & Cancelable, depFn: (wait?: number, options?: O) => any[]) {
   return (fn: T, wait?: number, options?: O) => {

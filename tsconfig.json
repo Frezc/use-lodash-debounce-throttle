@@ -7,16 +7,17 @@
     "noUnusedParameters": false,
     "noUnusedLocals": true,
     "noImplicitAny": false,
-    "target": "es5",
+    "target": "esnext",
     "pretty": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "lib": [
       "dom",
       "es6"
     ],
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "declarationDir": "lib"
   },
   "exclude": [
     "node_modules",

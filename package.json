@@ -1,15 +1,16 @@
 {
   "name": "use-lodash-debounce-throttle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bring debounce & throttle of lodash version to react-hooks",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "start": "docz dev",
-    "build": "tsc",
-    "prepublishOnly": "npm run build",
     "build-doc": "docz build",
-    "pub-doc": "npm run build-doc && gh-pages -d .docz/dist"
+    "pub-doc": "npm run build-doc && gh-pages -d .docz/dist",
+    "build": "yarn build:types && babel src --out-dir lib --extensions .ts",
+    "build:types": "tsc --emitDeclarationOnly",
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,12 @@
   },
   "homepage": "https://github.com/Frezc/use-lodash-debounce-throttle#readme",
   "devDependencies": {
-    "@types/lodash": "^4.14.121",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/lodash-es": "^4.17.3",
     "@types/react": "^16.8.3",
     "docz": "^0.13.7",
     "docz-theme-default": "^0.13.7",
@@ -39,6 +45,11 @@
     "typescript": "^3.3.3"
   },
   "dependencies": {
-    "lodash": "^4.17.11"
+    "@babel/runtime": "^7.3.4",
+    "lodash-es": "^4.17.11"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   }
 }
