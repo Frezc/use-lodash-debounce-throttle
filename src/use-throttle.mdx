@@ -17,12 +17,16 @@ const throttledFn = useThrottle(func, [wait=0], [options={}]);
     const debouncedChange = useThrottle((v) => {
       console.log('throttled value', v);
     }, 500, { leading: false });
+    const fn = useThrottle(function (currentTarget) {
+      console.log('currentTarget', currentTarget);
+    }, 500);
 
     return (
       <input
         type="text"
         onChange={(e) => {
           debouncedChange(e.target.value)
+          fn(e.currentTarget);
         }}
       />
     )
