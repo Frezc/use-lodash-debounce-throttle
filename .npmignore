@@ -5,3 +5,4 @@ node_modules/
 doczrc.js
 yarn.lock
 tsconfig.json
+.babelrc.js

@@ -17,11 +17,13 @@
       "es6"
     ],
     "outDir": "./lib",
-    "declarationDir": "lib"
+    "declarationDir": "types"
   },
   "exclude": [
     "node_modules",
     "lib",
-    ".docz"
+    ".docz",
+    "types",
+    "es"
   ]
 }
