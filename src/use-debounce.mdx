@@ -29,6 +29,7 @@ const debouncedFn = useDebounce(func, [wait=0], [options={}])
           }}
         />
         <button onClick={() => setWait(wait + 500)}>add wait</button>
+        <div>wait: {wait}ms, max 2s</div>
       </div>
     )
   }}

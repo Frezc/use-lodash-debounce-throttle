@@ -1,4 +1,5 @@
-import { useEffect, useRef, useMemo } from 'react';
+import { useEffect, useRef } from 'react';
+import useDidUpdate from './use-did-update';
 
 export type Fn = (...args: any[]) => any;
 export interface Cancelable {
@@ -7,8 +8,8 @@ export interface Cancelable {
 }
 
 function createCancelableHook<T extends Fn, O>(createFn: (fnWrapper: Fn, wait?: number, options?: O) => T & Cancelable, depFn: (wait?: number, options?: O) => any[]) {
-  return (fn: T, wait?: number, options?: O) => {
-    const compareParams = depFn(wait, options);
+  return (fn: T, wait?: number, options?: O, deps?: ReadonlyArray<any>) => {
+    const compareParams = depFn(wait, options).concat(deps || []);
 
     const debouncedFn = useRef<T & Cancelable | false>(false);
     const fnRef = useRef(fn);
@@ -20,11 +21,11 @@ function createCancelableHook<T extends Fn, O>(createFn: (fnWrapper: Fn, wait?: 
       }, wait, options);
     }
 
-    useMemo(() => {
+    useDidUpdate(() => {
       if (debouncedFn.current) {
         // only call when update
         debouncedFn.current.cancel();
-        debouncedFn.current = createFn(fn);
+        debouncedFn.current = createDebounce();
       }
     }, compareParams);
     useEffect(() => {
