@@ -1,6 +1,6 @@
 {
   "name": "use-lodash-debounce-throttle",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "Bring debounce & throttle of lodash version to react-hooks",
   "main": "lib/index.js",
   "browser": "es/index.js",
@@ -11,9 +11,9 @@
     "build-doc": "docz build",
     "pub-doc": "npm run build-doc && gh-pages -d .docz/dist",
     "build": "npm run build:types && npm run build:cjs && npm run build:es",
-    "build:cjs": "cross-env MODULES=cjs babel src --out-dir lib --extensions .ts",
-    "build:es": "babel src --out-dir es --extensions .ts",
-    "build:types": "tsc --emitDeclarationOnly",
+    "build:cjs": "rimraf ./lib && cross-env MODULES=cjs babel src --out-dir lib --extensions .ts",
+    "build:es": "rimraf ./es && babel src --out-dir es --extensions .ts",
+    "build:types": "rimraf ./types && tsc --emitDeclarationOnly",
     "prepublishOnly": "npm run build"
   },
   "repository": {
