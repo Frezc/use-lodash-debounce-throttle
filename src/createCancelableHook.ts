@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import useDidUpdate from './use-did-update';
+import useStableMemo from './use-stable-memo';
 
 export type Fn = (...args: any[]) => any;
 export interface Cancelable {
@@ -21,12 +21,12 @@ function createCancelableHook<T extends Fn, O>(createFn: (fnWrapper: Fn, wait?: 
       }, wait, options);
     }
 
-    useDidUpdate(() => {
+    useStableMemo(() => {
       if (debouncedFn.current) {
         // only call when update
         debouncedFn.current.cancel();
-        debouncedFn.current = createDebounce();
       }
+      debouncedFn.current = createDebounce();
     }, compareParams);
     useEffect(() => {
       return () => {
@@ -35,10 +35,6 @@ function createCancelableHook<T extends Fn, O>(createFn: (fnWrapper: Fn, wait?: 
         }
       }
     }, []);
-    if (!debouncedFn.current) {
-      // first time
-      debouncedFn.current = createDebounce();
-    }
 
     return debouncedFn.current;
   }

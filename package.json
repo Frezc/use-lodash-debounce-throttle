@@ -1,6 +1,6 @@
 {
   "name": "use-lodash-debounce-throttle",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Bring debounce & throttle of lodash version to react-hooks",
   "main": "lib/index.js",
   "browser": "es/index.js",
