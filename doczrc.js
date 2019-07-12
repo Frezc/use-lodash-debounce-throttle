@@ -1,8 +1,8 @@
 export default {
   title: 'demo',
-  // base: './',
+  base: './',
   codeSandbox: false,
   files: '**/*.{md,markdown,mdx}',
   typescript: true,
-  // hashRouter: true
+  hashRouter: true
 }
