@@ -1,11 +1,11 @@
 {
-  "vendors.js": "/static/js/vendors.ee012117.js",
-  "vendors.js.map": "/static/js/vendors.1f9861f096bb8bf67741.js.map",
-  "app.js": "/static/js/app.1f9861f096bb8bf67741.js",
-  "app.js.map": "/static/js/app.1f9861f096bb8bf67741.js.map",
-  "src-use-debounce.js": "/static/js/src-use-debounce.f57a9bce.js",
-  "src-use-debounce.js.map": "/static/js/src-use-debounce.1f9861f096bb8bf67741.js.map",
-  "src-use-throttle.js": "/static/js/src-use-throttle.f1d6e7c3.js",
-  "src-use-throttle.js.map": "/static/js/src-use-throttle.1f9861f096bb8bf67741.js.map",
-  "index.html": "/index.html"
+  "vendors.js": "/use-lodash-debounce-throttle/static/js/vendors.de60273a.js",
+  "vendors.js.map": "/use-lodash-debounce-throttle/static/js/vendors.b384c1c49671c0399172.js.map",
+  "app.js": "/use-lodash-debounce-throttle/static/js/app.b384c1c49671c0399172.js",
+  "app.js.map": "/use-lodash-debounce-throttle/static/js/app.b384c1c49671c0399172.js.map",
+  "src-use-debounce.js": "/use-lodash-debounce-throttle/static/js/src-use-debounce.f57a9bce.js",
+  "src-use-debounce.js.map": "/use-lodash-debounce-throttle/static/js/src-use-debounce.b384c1c49671c0399172.js.map",
+  "src-use-throttle.js": "/use-lodash-debounce-throttle/static/js/src-use-throttle.f1d6e7c3.js",
+  "src-use-throttle.js.map": "/use-lodash-debounce-throttle/static/js/src-use-throttle.b384c1c49671c0399172.js.map",
+  "index.html": "/use-lodash-debounce-throttle/index.html"
 }
