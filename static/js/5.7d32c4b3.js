@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{"./.docz/app/imports.js":function(e,n,r){"use strict";r.r(n),r.d(n,"imports",function(){return t});var t={"src/use-throttle.mdx":function(){return Promise.all([r.e(0),r.e(4)]).then(r.bind(null,"./src/use-throttle.mdx"))},"src/use-debounce.mdx":function(){return Promise.all([r.e(0),r.e(3)]).then(r.bind(null,"./src/use-debounce.mdx"))}}}},0,[0,3,4]]);
+//# sourceMappingURL=5.32b33b88d755f7053fb6.js.map
