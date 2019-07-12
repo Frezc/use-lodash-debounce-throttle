@@ -11,7 +11,7 @@ function createCancelableHook<T extends Fn, O>(createFn: (fnWrapper: Fn, wait?: 
   return (fn: T, wait?: number, options?: O, deps?: ReadonlyArray<any>) => {
     const compareParams = depFn(wait, options).concat(deps || []);
 
-    const debouncedFn = useRef<T & Cancelable | false>(false);
+    const debouncedFn = useRef<T & Cancelable>(undefined!);
     const fnRef = useRef(fn);
     fnRef.current = fn;
 
